@@ -1,5 +1,6 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const controllerCats = require('../../controllers/cats')
+const router = express.Router()
 
 router
   .get('/', controllerCats.getAll)
@@ -7,9 +8,9 @@ router
   .post('/', controllerCats.create)
   .put('/:id', controllerCats.update)
   .patch('/:id/vaccinated', controllerCats.updateStatus)
-  .delete('/:id', controllerCats.remove);
+  .delete('/:id', controllerCats.remove)
 
-module.exports = router;
+module.exports = router
 
 /**
  * Авторизации и валидации
