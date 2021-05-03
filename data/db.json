@@ -1,0 +1,28 @@
+{
+  "cats": [
+    {
+      "id": "3f07577b-644d-4b72-9571-d840e512c15b",
+      "name": "Simon",
+      "age": 3,
+      "isVaccinated": false
+    },
+    {
+      "id": "70454cf3-eed4-4058-a255-0edf5062ebad",
+      "name": "Monya",
+      "age": 5,
+      "isVaccinated": false
+    },
+    {
+      "id": "a620a549-6367-45a3-93b6-8236680b701a",
+      "name": "Benya",
+      "age": 11,
+      "isVaccinated": true
+    },
+    {
+      "id": "a9eb1314-2841-4d10-823e-809579896ee7",
+      "name": "jhgkjgkjg",
+      "age": 72,
+      "isVaccinated": false
+    }
+  ]
+}

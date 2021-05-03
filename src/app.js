@@ -4,6 +4,7 @@ const app = express();
 const { Httpcode, HttpCode } = require('./helpers/constants');
 const routerCats = require('./api/cats');
 
+// Set headers
 app.use(cors());
 app.use(express.json());
 

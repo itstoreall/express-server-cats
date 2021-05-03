@@ -1,19 +1,30 @@
+const { CatsRepository } = require('../repository');
+
 class CatsService {
-  constructor() {}
+  constructor() {
+    this.repositories = {
+      cats: new CatsRepository(),
+    };
+  }
   getAll() {
-    return {};
+    const data = this.repositories.cats.getAll();
+    return data;
   }
-  getById() {
-    return {};
+  getById({ id }) {
+    const data = this.repositories.cats.getById(id);
+    return data;
   }
-  create() {
-    return {};
+  create(body) {
+    const data = this.repositories.cats.create(body);
+    return data;
   }
   update({ id }, body) {
-    return {};
+    const data = this.repositories.cats.update(id, body);
+    return data;
   }
   remove({ id }) {
-    return {};
+    const data = this.repositories.cats.remove(id);
+    return data;
   }
 }
 
