@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const { Httpcode, HttpCode } = require('./helpers/constants');
+const { HttpCode } = require('./helpers/constants');
 const routerCats = require('./api/cats');
 
 // Set headers
@@ -19,13 +19,13 @@ app.use((req, res, next) => {
   });
 });
 
-app.use((req, res, next) => {
+app.use((err, req, res, next) => {
   err.status = err.status ? err.status : HttpCode.INTERNAL_SERVER_ERROR;
 
   res.status(err.status).json({
     status: err.status === 500 ? 'fail' : 'error',
     code: err.status,
-    message: err.nessage,
+    message: err.message,
     data: err.status === 500 ? 'Internal Service Error' : err.data,
   });
 });

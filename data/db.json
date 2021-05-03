@@ -15,14 +15,14 @@
     {
       "id": "a620a549-6367-45a3-93b6-8236680b701a",
       "name": "Benya",
-      "age": 11,
+      "age": 14,
       "isVaccinated": true
     },
     {
-      "id": "a9eb1314-2841-4d10-823e-809579896ee7",
-      "name": "jhgkjgkjg",
-      "age": 72,
-      "isVaccinated": false
+      "id": "8fc3bb1e-7733-4626-8fca-b858233183c3",
+      "name": "Urlik",
+      "age": 6,
+      "isVaccinated": true
     }
   ]
 }

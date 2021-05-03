@@ -1,17 +1,22 @@
-const express = require('express')
-const controllerCats = require('../../controllers/cats')
-const router = express.Router()
+const express = require('express');
+const controllerCats = require('../../controllers/cats');
+const router = express.Router();
+const {
+  validateCreateCat,
+  validateUpdateCat,
+  validateUpdateStatusCat,
+} = require('../../validation/cats');
 
 router
   .get('/', controllerCats.getAll)
   .get('/:id', controllerCats.getById)
-  .post('/', controllerCats.create)
-  .put('/:id', controllerCats.update)
-  .patch('/:id/vaccinated', controllerCats.updateStatus)
-  .delete('/:id', controllerCats.remove)
+  .post('/', validateCreateCat, controllerCats.create)
+  .put('/:id', validateUpdateCat, controllerCats.update)
+  .patch(
+    '/:id/vaccinated',
+    validateUpdateStatusCat,
+    controllerCats.updateStatus
+  )
+  .delete('/:id', controllerCats.remove);
 
-module.exports = router
-
-/**
- * Авторизации и валидации
- */
+module.exports = router;

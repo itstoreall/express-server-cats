@@ -26,13 +26,14 @@ class CatsRepository {
 
   update(id, body) {
     const record = db.get('cats').find({ id }).assign(body).value();
+
     db.write();
 
     return record.id ? record : null;
   }
 
   remove(id) {
-    const record = db.get('cats').remove({ id }).write();
+    const [record] = db.get('cats').remove({ id }).write();
 
     return record;
   }

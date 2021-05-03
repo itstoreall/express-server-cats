@@ -5,6 +5,7 @@ const catsService = new CatsService();
 const getAll = (req, res, next) => {
   try {
     const cats = catsService.getAll();
+
     res.status(HttpCode.OK).json({
       status: 'success',
       code: HttpCode.OK,
@@ -20,6 +21,7 @@ const getAll = (req, res, next) => {
 const getById = (req, res, next) => {
   try {
     const cat = catsService.getById(req.params);
+
     if (cat) {
       return res.status(HttpCode.OK).json({
         status: 'success',
@@ -43,6 +45,7 @@ const getById = (req, res, next) => {
 const create = (req, res, next) => {
   try {
     const cat = catsService.create(req.body);
+
     res.status(HttpCode.CREATED).json({
       status: 'success',
       code: HttpCode.CREATED,
@@ -58,6 +61,7 @@ const create = (req, res, next) => {
 const update = (req, res, next) => {
   try {
     const cat = catsService.update(req.params, req.body);
+
     if (cat) {
       return res.status(HttpCode.OK).json({
         status: 'success',
@@ -81,6 +85,7 @@ const update = (req, res, next) => {
 const updateStatus = (req, res, next) => {
   try {
     const cat = catsService.update(req.params, req.body);
+
     if (cat) {
       return res.status(HttpCode.OK).json({
         status: 'success',
@@ -104,6 +109,7 @@ const updateStatus = (req, res, next) => {
 const remove = (req, res, next) => {
   try {
     const cat = catsService.remove(req.params);
+
     if (cat) {
       return res.status(HttpCode.OK).json({
         status: 'success',
@@ -124,7 +130,14 @@ const remove = (req, res, next) => {
   }
 };
 
-module.exports = { getAll, getById, create, update, updateStatus, remove };
+module.exports = {
+  getAll,
+  getById,
+  create,
+  update,
+  updateStatus,
+  remove,
+};
 
 /**
  * Методы и обработчики маршрутов
